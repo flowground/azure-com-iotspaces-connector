@@ -1,0 +1,97 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "resourceGroupName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "resourceName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 64
+        },
+        "requestBody": {
+            "description": "The description of the IoTSpaces service.",
+            "properties": {
+                "properties": {
+                    "description": "The common properties of an IoTSpaces service.",
+                    "properties": {
+                        "managementApiUrl": {
+                            "description": "The management Api endpoint.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "provisioningState": {
+                            "description": "The provisioning state.",
+                            "enum": [
+                                "Provisioning",
+                                "Deleting",
+                                "Succeeded",
+                                "Failed",
+                                "Canceled"
+                            ],
+                            "readOnly": true,
+                            "type": "string",
+                            "x-ms-enum": {
+                                "modelAsString": true,
+                                "name": "provisioningState"
+                            }
+                        },
+                        "storageContainer": {
+                            "description": "The properties of the designated storage container.",
+                            "properties": {
+                                "connectionString": {
+                                    "description": "The connection string of the storage account.",
+                                    "type": "string"
+                                },
+                                "containerName": {
+                                    "description": "The name of storage container in the storage account.",
+                                    "type": "string"
+                                },
+                                "resourceGroup": {
+                                    "description": "The name of the resource group of the storage account.",
+                                    "type": "string"
+                                },
+                                "subscriptionId": {
+                                    "description": "The subscription identifier of the storage account.",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "webPortalUrl": {
+                            "description": "The management UI endpoint.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "tags": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Instance tags",
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "minLength": 10,
+            "enum": [
+                "2017-10-01-preview"
+            ]
+        }
+    }
+}

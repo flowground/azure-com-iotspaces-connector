@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "properties": {
+        "subscriptionId": {
+            "required": true,
+            "type": "string",
+            "format": "uuid"
+        },
+        "requestBody": {
+            "description": "Input values.",
+            "properties": {
+                "name": {
+                    "description": "The name of the IoTSpaces service instance to check.",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "minLength": 10,
+            "enum": [
+                "2017-10-01-preview"
+            ]
+        }
+    }
+}

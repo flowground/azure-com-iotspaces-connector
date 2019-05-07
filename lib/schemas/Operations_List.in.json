@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "properties": {
+        "api_version": {
+            "required": true,
+            "type": "string",
+            "minLength": 10,
+            "enum": [
+                "2017-10-01-preview"
+            ]
+        }
+    }
+}
